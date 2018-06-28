@@ -1,5 +1,4 @@
-﻿output/*
-*.pdf
+﻿*.pdf
 *.backup
 *~
 *.aux
@@ -35,3 +34,4 @@
 *.syg
 *.nav
 *.snm
+*.bcf
