@@ -1,0 +1,72 @@
+%allgemeine Formatangaben
+\documentclass[
+ a4paper,                       % Papierformat
+ 12pt,                          % Schriftgr\"o\ss{}e
+ ngerman,                       % f\"ur Umlaute, Silbentrennung etc.
+ titlepage,                     % es wird eine Titelseite verwendet
+ bibliography=totoc,                    % Literaturverzeichnis im Inhaltsverzeichnis auff\"uhren
+ listof=totoc,                      % Verzeichnisse im Inhaltsverzeichnis auff\"uhren
+ twoside,                       % einseitiges Dokument
+ openright,
+ captions=nooneline,                    % einzeilige Gleitobjekttitel ohne Sonderbehandlung wie mehrzeilige Gleitobjekttitel behandeln
+ numbers=noenddot,                  % \"Uberschriften-??Nummerierung ohne Punkt am Ende
+ parskip=half,                      % zwischen Abs\"atzen wird eine halbe Zeile eingef\"ugt
+ ]{scrbook} %scrartcl
+
+
+\input{content/headfoot/header}
+
+
+\begin{document}
+
+\VerbatimFootnotes
+
+% \include{content/headfoot/titlepages/titlepageDefault}                 % Layout nach Vorgabe 5 von Herrn Thomann
+\include{content/headfoot/titlepages/titlepage5}                 % Layout nach Vorgabe 5 von Herrn Thomann
+%\null\newpage %
+\thispagestyle{empty}\null%\newpage
+
+\frontmatter							% Seitenzählerstart vor dem Text
+
+\include{content/affidavit}
+
+\include{content/acknowledgement}
+
+\include{content/abstract}					% Abstrakt
+% \null\newpage					% Danksagung
+% \include{content/preface}					% Vorwort
+
+\tableofcontents						% Inhaltsverzeichnis
+
+% \printglossary[title=Glossar] 					% Glossar Einträge in Header/Glossar.tex vornehmen
+\renewcommand{\glsnamefont}[1]{\textbf{#1}}
+\printglossary[type=\acronymtype,style=long,title=Abkürzungsverzeichnis]	% Abkürzungsverzeichnis Einträge in Header/Abkuerzungen vornehmen
+\printglossary[type=symbolslist,style=customlong,title=Symbolverzeichnis]
+
+\mainmatter							% Seitenzählerstart Haupttext
+
+\include{content/maintext}					% hier steht der eigentliche Text der Arbeit
+
+\glsaddall[types={symbolslist}]
+
+% \thispagestyle{empty}\null%\newpage
+
+% \pagenumbering{Roman}
+
+\listoffigures                          % Abbildungsverzeichnis
+\listoftables                           % Tabellenverzeichnis
+
+% \appendix
+% \addchap{Anhang}
+% \refstepcounter{chapter}
+% \input{content/appendix}
+
+% \lstlistoflistings
+% \listofalgorithms
+
+\setlength\bibitemsep{11pt}
+\printbibliography              % Literaturverzeichnis
+
+% \pagestyle{empty}
+
+\end{document}

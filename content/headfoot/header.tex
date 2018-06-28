@@ -1,0 +1,95 @@
+
+%http://tex.stackexchange.com/questions/21904/input-and-absolute-paths
+\makeatletter
+\def\input@path{{./content/resources/}} % {../r/doc/}
+\makeatother
+
+% \graphicspath{{./content/resources/}}
+
+\input{content/headfoot/packages}					% einbinden der verwendeten Latex-Pakete
+
+\input{content/headfoot/metadata} 				% einbinden von pers\"onlichen Daten
+
+\input{content/headfoot/commands}					% Erg\"anzende Befehle
+
+% \floatstyle{ruled}
+\newfloat{program}{bhp}{lop}
+\floatname{program}{Pseudocode}
+
+\onehalfspacing 					% 1,5facher Zeilenabstand
+
+%\geometry{left=2.5cm,right=2.5cm,top=1.5cm,bottom=1cm,includeheadfoot}
+
+% \definecolor{InterneLinkfarbe}{rgb}{0.1,0.1,0.3}    % Farbliche Absetzung von externen Links
+\definecolor{InterneLinkfarbe}{rgb}{0.0,0.0,0.0} 	% Farbliche Absetzung von externen Links
+\definecolor{ExterneLinkfarbe}{rgb}{0.1,0.1,0.7}	% Farbliche Absetzung von internen Links
+\definecolor{dunkelgrau}{rgb}{0.8,0.8,0.8}      %
+\definecolor{hellgrau}{rgb}{0.95,0.95,0.95}     %
+\definecolor{orange}{rgb}{1,0.7,0}          %
+\definecolor{darkgreen}{rgb}{0,0.5,0}           %
+\definecolor{lila}{rgb}{0.5,0,0.5}          %
+
+% Einstellungen f\"ur Fu\ss{}noten:
+\captionsetup{font=footnotesize,labelfont=sc,singlelinecheck=true,margin={5mm,5mm}}
+
+% Stil der Quellenangabe
+% \bibliographystyle{ieeetr} % apalike,alphadin,ieeetr,authordate,harvard
+
+\theoremstyle{definition}
+\newtheorem{exmp}{Beispiel}
+
+%Ausschluss von Schusterjungen
+\clubpenalty = 10000
+%Ausschluss von Hurenkindern
+\widowpenalty = 10000
+\displaywidowpenalty=10000
+
+% Befehle, die Umlaute ausgeben, f\"uhren zu Fehlern, wenn sie hyperref als Optionen \"ubergeben werden
+\hypersetup{
+    pdftitle={\thesistitle \thesissubtitle},
+    pdfauthor={\thesisauthor},
+    pdfcreator={\thesisauthor},
+    pdfsubject={\thesistitle \thesissubtitle},
+    pdfkeywords={\thesistitle \thesissubtitle},
+    citecolor=black
+}
+
+% Beispiel f\"ur eine Listings-Codeumbebungen
+% Bei mehreren Definitionen empfielt sich das auslagern in eine externe Datei
+
+%TODO: MATLAB einf\"ugen
+\lstloadlanguages{Python} %Java
+% \lstset{
+% 	frame=tb,
+% 	framesep=5pt,
+% 	basicstyle=\footnotesize\ttfamily,
+% 	showstringspaces=false,
+% 	keywordstyle=\ttfamily\bfseries\color{CadetBlue},
+% 	identifierstyle=\ttfamily,
+% 	stringstyle=\ttfamily\color{OliveGreen},
+% 	commentstyle=\color{GrayBlue},
+% 	rulecolor=\color{Gray},
+% 	xleftmargin=5pt,
+% 	xrightmargin=5pt,
+% 	aboveskip=\bigskipamount,
+% 	belowskip=\bigskipamount
+% }
+
+%Den Punkt am Ende jeder Beschreibung deaktivieren
+\renewcommand*{\glspostdescription}{}
+
+%Silbentrennung
+\input{content/headfoot/hyphenation}
+
+%Glossar-Befehle anschalten
+\newglossary[slg]{symbolslist}{syi}{syg}{Symbolverzeichnis}
+\newglossarystyle{customlong}{
+    \setglossarystyle{long}
+    % I use this to prevent a different vertical spacing from x2 to y than from x1 to x2
+    \renewcommand{\glsgroupskip}{}
+}
+\makeglossaries
+\glsenablehyper
+\input{content/headfoot/acronyms}
+\input{content/headfoot/glossary}
+\input{content/headfoot/symbols}

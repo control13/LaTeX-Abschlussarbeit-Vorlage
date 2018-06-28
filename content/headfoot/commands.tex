@@ -1,0 +1,4 @@
+\newcommand{\leadingzero}[1]{\ifnum #1<10 0\the#1\else\the#1\fi} 	% fügt bei einstelligen Zahlen eine f\"uhrende 0 ein
+\newcommand{\Ind}[1]{#1\index{#1}}					% Eintrag ins Stichwortverzeichnis mit direkter Ausgabe
+\newcommand{\getLable}[1]{\ref{#1} auf Seite \pageref{#1}}		% erm\"oglicht folgende Ausgabe "Kapitel 1.2 auf Seite 7"
+
