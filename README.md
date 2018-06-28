@@ -2,6 +2,8 @@
 
 Die ist eine Vorlage für Abschlußarbeiten wie Bachelor-/Master- oder Diplomarbeiten. Sie ist angepasst an die deutsche Sprache und die Voreingestellen Werte sind für Studenten der Universität Leipzig und dem Fachbereich Informatik angepasst. Es sollte jedoch einfach sein, die Vorlage entsprechend der Vorgaben aus dem eigenem Institut oder für eine andere Sprache anzupassen.
 
+HTWK-Studenten der Fakultät IMN können [hier](https://portal.imn.htwk-leipzig.de/studierende/graduierungsarbeit/latex-vorlage-fuer-graduierungsarbeiten-an-der-f-imn-1/view) eine an die HTWK angepasste Version finden, bzw. das Headerfile und das Logo können auch in diese Vorlage übertragen werden.
+
 ## Requirements
 
 Benötigt werden:
